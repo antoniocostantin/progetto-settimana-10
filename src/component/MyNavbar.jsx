@@ -53,7 +53,8 @@ function MyNavbar({changed}) {
               }}
               aria-label="Search"
             />
-            <Button variant="outline-light">
+            <Button variant="outline-light" type="submit">
+                
               <i className="bi bi-search"></i>
             </Button>
           </Form>

@@ -53,8 +53,7 @@ const CityDetails = ({ changep }) => {
     <>
       {isLoading && (
         <Spinner
-          animation="border"
-          variant="danger"
+          variant="dark"
           className="m-5 display-3"
         />
       )}
