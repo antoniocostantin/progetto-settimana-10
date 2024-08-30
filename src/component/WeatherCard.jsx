@@ -9,7 +9,7 @@ const key = "0d42fedfedaad315a3fe4270a91c0d00";
 
 const WeatherCard = ({ location }) => {
   const [weather, setWeather] = useState([]);
-  const [isLoading, setIsLoading] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
   const [isError, setIsError] = useState(false);
   const [icon, setIcon] = useState("");
   const [min, setMin] = useState(0);

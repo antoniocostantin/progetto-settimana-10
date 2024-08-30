@@ -68,7 +68,7 @@ const CityDetails = ({ changep }) => {
         <Container>
           <h4 className="my-4 text-black"> {weather.city.name} </h4>
           <Row
-            xs={{ cols: 2 }}
+            xs={{cols:1}} sm={{cols:2}}
             md={{ cols: 3 }}
             lg={{ cols: 4 }}
             className="g-4"
