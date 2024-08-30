@@ -47,7 +47,7 @@ const CityDetails = ({ changep }) => {
     const city = params.city;
     console.log(city);
     fetchCity(city);
-  }, [changep]);
+  }, [params]);
 
   return (
     <>
