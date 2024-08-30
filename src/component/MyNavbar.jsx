@@ -1,10 +1,21 @@
+import { useState } from "react";
 import Button from "react-bootstrap/Button";
 import Container from "react-bootstrap/Container";
 import Form from "react-bootstrap/Form";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
+import { useNavigate } from "react-router-dom";
 
-function MyNavbar() {
+function MyNavbar({changed}) {
+
+    const navigate = useNavigate()
+
+
+    const searchclick = (city) => {
+      navigate('/details/' + city)
+    }
+    const [search, setSearch] = useState('')
+
   return (
     <Navbar expand="md" bg="black" data-bs-theme="dark">
       <Container fluid>
@@ -23,12 +34,20 @@ function MyNavbar() {
             style={{ maxHeight: "100px" }}
             navbarScroll
           ></Nav>
-          <Form className="d-flex">
+          <Form className="d-flex"
+          onSubmit={(e) => {
+            e.preventDefault();
+           searchclick(search)
+           changed()
+          }}>
             <Form.Control
               variant="dark"
               type="search"
               placeholder="Search"
               className="me-2"
+              onChange={(e)=> {
+                setSearch(e.target.value)
+              }}
               aria-label="Search"
             />
             <Button variant="outline-light">

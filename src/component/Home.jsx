@@ -2,10 +2,9 @@ import { Container, Row } from "react-bootstrap";
 import WeatherCard from "./WeatherCard";
 
 /* eslint-disable jsx-a11y/alt-text */
-const myFav = ["Erchie", "Brindisi", "Roma"];
 
 
-const Home = () => {
+const Home = ({myFav}) => {
   return (
     <Container>
       <h4 className="my-4 text-black">My Favourite</h4>
