@@ -31,7 +31,7 @@ const SingleCard = ({w}) => {
               {w.main.temp_min}°C <br />
               <i className="bi bi-water"></i> {w.main.humidity} % <br />
               <i className="bi bi-wind"></i> {w.wind.speed} <small>m/s</small> -- {w.wind.deg} <small>deg</small><hr/>
-              <small >{w.dt_txt.replaceAll('-', '/').slice(0,10)} --- <i className="bi bi-stopwatch-fill">  at </i>{w.dt_txt.slice(12,13)} </small>
+              <small >{w.dt_txt.replaceAll('-', '/').slice(0,10)} --- <i className="bi bi-stopwatch-fill">  at </i>{w.dt_txt.slice(11,13)} </small>
             </Card.Text>
           </Card.Body>
         </Card>
