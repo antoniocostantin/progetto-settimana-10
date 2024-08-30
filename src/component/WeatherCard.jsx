@@ -3,6 +3,7 @@ import { Alert } from "bootstrap";
 import { useEffect, useState } from "react";
 import { Card, Col } from "react-bootstrap";
 import { Spinner } from "react-bootstrap";
+import { useNavigate } from "react-router-dom";
 
 const key = "0d42fedfedaad315a3fe4270a91c0d00";
 
@@ -18,11 +19,17 @@ const WeatherCard = ({ location }) => {
   const [wind, setWind] = useState(0);
   const [windd, setWindd] = useState(0);
 
+  const navigate = useNavigate()
+  const naviga = (city) => {
+    navigate('/details/' + city)
+  }
+
+
   const fetchWeather = async (locality) => {
     setIsLoading(true);
     try {
       let response = await fetch(
-        `https://api.openweathermap.org/data/2.5/weather?q=${locality},It&units=metric&appid=${key}`
+        `https://api.openweathermap.org/data/2.5/weather?q=${locality}&units=metric&appid=${key}`
       );
       if (response.ok) {
         let weather = await response.json();
@@ -64,7 +71,7 @@ const WeatherCard = ({ location }) => {
         <Spinner variant="dark" />
       ) : (
         <Col>
-          <Card bg="dark" key="Dark" text="white" className="mb-2">
+          <Card bg="dark" key="Dark" text="white" className="mb-2" onClick={()=>{naviga(weather.name)}}>
             <Card.Header className="text-capitalize">
               <img src={icon} alt="icon" className="iconw" /> {desc}
             </Card.Header>

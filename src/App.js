@@ -9,7 +9,7 @@ import MyFooter from "./component/MyFooter.jsx";
 import Home from "./component/Home.jsx";
 import CityDetails from "./component/CityDetails.jsx";
 import { useEffect, useState } from "react";
-const myFav = ["Erchie", "Brindisi", "Roma", 'Andria', 'Bari', 'Lecce'];
+const myFav = ['Praga' ,"Erchie", "Brindisi", "Roma",'Londra' , 'Andria', 'Bari', 'Lecce'];
 
 function App() {
 
