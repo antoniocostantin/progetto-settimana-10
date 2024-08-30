@@ -6,7 +6,6 @@ import "bootstrap-icons/font/bootstrap-icons.css";
 import "../node_modules/bootstrap/dist/js/bootstrap.js";
 import MyNavbar from "./component/MyNavbar";
 import MyFooter from "./component/MyFooter.jsx";
-import MyNav from "./component/MyNav.jsx";
 import Home from "./component/Home.jsx";
 import CityDetails from "./component/CityDetails.jsx";
 import { useEffect, useState } from "react";
@@ -21,6 +20,8 @@ function App() {
  useEffect (()=> {
   setChangep(false)
  }, [])
+
+ useEffect(()=>{}, [changep])
 
   return (
     <BrowserRouter>

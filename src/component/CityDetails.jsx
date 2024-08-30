@@ -1,6 +1,6 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import { useEffect, useState } from "react";
-import { Container, Row } from "react-bootstrap";
+import { Container, Row, Alert, Spinner } from "react-bootstrap";
 import { useParams } from "react-router-dom";
 import SingleCard from "./SingleCard";
 const key = "0d42fedfedaad315a3fe4270a91c0d00";
@@ -51,6 +51,19 @@ const CityDetails = ({ changep }) => {
 
   return (
     <>
+      {isLoading && (
+        <Spinner
+          animation="border"
+          variant="danger"
+          className="m-5 display-3"
+        />
+      )}
+      {isError && (
+        <Alert variant="danger">
+          <Alert.Heading>Oh snap! You got an error!</Alert.Heading>
+          <p>Something went wrong</p>
+        </Alert>
+      )}
       {weather.city && (
         <Container>
           <h4 className="my-4 text-black"> {weather.city.name} </h4>
@@ -61,9 +74,7 @@ const CityDetails = ({ changep }) => {
             className="g-4"
           >
             {weekWeather.map((dayweather, i) => {
-              return (
-                  <SingleCard w={dayweather}/>
-              );
+              return <SingleCard key={i} w={dayweather} />;
             })}
           </Row>
         </Container>
