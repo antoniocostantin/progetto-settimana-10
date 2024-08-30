@@ -10,7 +10,7 @@ import MyNav from "./component/MyNav.jsx";
 import Home from "./component/Home.jsx";
 import CityDetails from "./component/CityDetails.jsx";
 import { useEffect, useState } from "react";
-const myFav = ["Erchie", "Brindisi", "Roma"];
+const myFav = ["Erchie", "Brindisi", "Roma", 'Andria', 'Bari', 'Lecce'];
 
 function App() {
 

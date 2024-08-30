@@ -10,6 +10,9 @@ function MyNavbar({changed}) {
 
     const navigate = useNavigate()
 
+    const gohome = ()=>{
+        navigate ('/')
+    }
 
     const searchclick = (city) => {
       navigate('/details/' + city)
@@ -19,7 +22,7 @@ function MyNavbar({changed}) {
   return (
     <Navbar expand="md" bg="black" data-bs-theme="dark">
       <Container fluid>
-        <Navbar.Brand className="text-white" href="#">
+        <Navbar.Brand className="text-white" href="#" onClick={()=>{gohome()}}>
           <img
             className="logo"
             alt="logo"
