@@ -12,6 +12,9 @@
     animation: App-logo-spin infinite 20s linear;
   }
 }
+.logo{
+  height: 45px;
+}
 
 .App-header {
   background-color: #282c34;
@@ -35,4 +38,19 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+#root main {
+  flex-grow: 1;
+}
+
+.iconw{
+  height: 30px;
+  object-fit: cover;
 }
